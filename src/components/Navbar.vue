@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info">
     <div class="container-fluid">
       <router-link class="navbar-brand" to="/">Rick & Morty</router-link>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,7 +34,7 @@ export default {
 }
 
 .navbar li a.router-link-exact-active {
-  color: rgb(12,12,12) !important;
+  color: rgb(250,250,250) !important;
 }
 
 </style>
