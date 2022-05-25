@@ -21,28 +21,56 @@ export default createStore({
     },
     setCurrentCharacter (state, payload) {
       state.character = payload;
-      //console.log(state.character.origin.name)
+      console.log(state.character)
+      console.log(state.character.origin.name)
     },
   },
   actions: {
+    // async consumirCharacter(context) {
+    //   try {
+    //     const data = await fetch('https://rickandmortyapi.com/api/character');
+    //     const getcharacter = await data.json();
+    //     const characters = getcharacter.results;
+    //     //console.log (characters)
+    //     context.commit('setCharacters', characters)
+
+    //   } catch (error) {
+    //     console.log(error);
+    //     throw error;
+    //   }
+    // },
     async consumirCharacter(context) {
       try {
-        const data = await fetch('https://rickandmortyapi.com/api/character');
-        const getcharacter = await data.json();
-        const characters = getcharacter.results;
-        //console.log (characters)
-        context.commit('setCharacters', characters)
-
+        const response = await fetch('api.json');
+        const data = await response.json();
+        //console.log (data);
+        context.commit('setCharacters', data)
       } catch (error) {
-        console.log(error);
         throw error;
       }
     },
-    async getCharacterPorId(context, payload) {
+    // async getCharacterPorId(context, payload) {
       
+    //   try {
+    //     const data = await fetch(`https://rickandmortyapi.com/api/character/${payload}`);
+    //     const getCharacterid = await data.json();
+    //     context.commit('setCurrentCharacter', getCharacterid)
+      
+    //   } catch (error) {
+    //     console.log(error);
+    //     throw error;
+    //   }
+    //  }
+    async getCharacterPorId(context, payload) { 
       try {
-        const data = await fetch(`https://rickandmortyapi.com/api/character/${payload}`);
-        const getCharacterid = await data.json();
+        //
+        const response = await fetch('../api.json');
+        const data = await response.json();
+        //Filtramos la data y obtenemos un array
+        const character = data.filter( character => character.id == payload);
+        //console.log(character);//Aquí tengo un array, pero necesito pasar un objeto
+        const getCharacterid = character[0];
+        console.log(getCharacterid);
         context.commit('setCurrentCharacter', getCharacterid)
       
       } catch (error) {

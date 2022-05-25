@@ -74,7 +74,5 @@ export default {
 </script>
 
 <style scope>
-h3 {
-  font-size: 16px !important;
-}
+
 </style>
