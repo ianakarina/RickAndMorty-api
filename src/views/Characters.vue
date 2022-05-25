@@ -34,9 +34,6 @@
       </div>
     </div>
 
-
-    
-
     <button class="btn btn-secondary btn-sm mt-1"
           @click="$router.go(-1)"
           >Volver
@@ -55,42 +52,20 @@
   },
    data() {
      return {
-       character: {},
-       //props: ['characterPropId'],
-       //id: null
+       //character: {}
      }
+   },
+   computed: {
+    character() {
+      return this.$store.getters.getCurrentCharacter
+    }
    },
    methods: {
-     async getCharacterPorId() {
-      try {
-        //const data = await fetch(`https://rickandmortyapi.com/api/character/${this.id}`);
-        const data = await fetch(`https://rickandmortyapi.com/api/character/${this.$route.params.id}`);
-        const getCharacterid = await data.json();
-        this.character = getCharacterid;
-        //console.log(this.character);
-        console.log(this.character.origin.name)
-      
-      } catch (error) {
-        console.log(error);
-        throw error;
-      }
-     }
    },
    created() {
-     //this.id=this.$route.params.id;
-     this. getCharacterPorId();
-
-       //Si se llega por ruta
-      // if (this.id!=null) {
-      //   console.log('Id ruta es: ' + this.id);
-      //   this.getCharacterPorId();
-
-      // } else {//Si se usa como componente, primero encuentro producto y luego rescato id de BD
-      //   this.id=this.characterPropId;
-      //   console.log('Id prop es: ' + this.id);
-      //   this.getCharacterPorId();
-      // }
-
+     //this. getCharacterPorId();
+     const routeId= this.$route.params.id;
+     this.$store.dispatch('getCharacterPorId', routeId);
    }
  }
 </script>
