@@ -1,0 +1,33 @@
+// Theming Bootstrap
+// Define variable defaults
+$body-bg: #142c33;
+$info:#315557;
+$success: #2BDEA8;
+$gray-900: #1D4049;//cards
+$gray-800: #343a40;
+$gray-100: #f8f9fa;
+$gray-200: lightgray;
+$white:white;//#F6EEFC;
+$black:black;//#1C0130;
+$title: #a4d2c9;
+$link-color: #2BDEA8;
+
+// Lighten
+$gray5: lighten($black, 50%);
+$info-light: lighten($info, 10%);
+
+// Redefiniendo
+$body-color: $gray-100;
+$accordion-button-bg:$info;
+$accordion-button-color: $gray-200;
+$accordion-button-active-bg: $info;
+$accordion-bg: $info-light;
+$accordion-button-active-color: $gray-100;
+$accordion-button-focus-box-shadow: none;
+
+$mis-radios: (
+    "no-radio": 0px,
+    "radio-sm": 4px,
+    "radio-md": 6px
+);
+

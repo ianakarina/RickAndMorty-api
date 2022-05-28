@@ -1,0 +1,31 @@
+@import './partials/variables';
+@import './partials/mixins';
+
+// Then import Bootstrap and BootstrapVue SCSS files (order is important)
+// Bootstrap and its default variables
+@import '../../node_modules/bootstrap/scss/bootstrap';
+// BootstrapVue and its default variables
+//@import '../node_modules/bootstrap-vue/src/index.scss';
+
+// Custom styles overwrite Bootstrap
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+h1, .h1 {
+    color:$title;
+}
+@media (min-width: 1200px) {
+h1, .h1 {
+    font-size: 3rem;
+    font-weight: 900;
+}}
+
+@media (min-width: 1200px) {
+h2, .h2 {
+    font-size: 1.6rem;
+}}
+.badge {
+    font-weight: normal;
+}

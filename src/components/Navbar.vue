@@ -10,9 +10,6 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/">Personajes</router-link>
           </li>
-          <!-- <li class="nav-item">
-            <router-link class="nav-link" to="/about">about</router-link>
-          </li> -->
         </ul>
 
       </div>
